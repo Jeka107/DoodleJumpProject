@@ -43,6 +43,7 @@ public class Block : MonoBehaviour
                 newVelocity.y = jumpForce;
                 rb.velocity = newVelocity;
                 touched = true;
+                GetComponent<AudioSource>().Play();
             }
         }
         if (other.tag == "Coin")

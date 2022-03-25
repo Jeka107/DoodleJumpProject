@@ -8,6 +8,7 @@ public class Spike : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<PlayerMovement>()) //if player collide with spike then.
         {
+            GetComponent<AudioSource>().Play();
             FindObjectOfType<LabelShow>().ShowPlayAgain();     //show label.
             Destroy(collision.gameObject);                    //destroy player.
         }

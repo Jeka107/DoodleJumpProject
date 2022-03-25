@@ -35,6 +35,10 @@ public class Enemy : MonoBehaviour
             newVelocity.x = newVelocity.x * (-1); //change direction.
             rb.velocity = newVelocity;
         }
+        if(other.gameObject.tag=="Player")
+        {
+            GetComponent<AudioSource>().Play();
+        }
     }
         bool MovingRight() //cheking moving left or right.
     {

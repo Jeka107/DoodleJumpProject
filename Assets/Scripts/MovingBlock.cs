@@ -65,6 +65,7 @@ public class MovingBlock : MonoBehaviour
                 newVelocity.y = jumpForce;
                 rb.velocity = newVelocity;
                 touched = true; //block have been touched.
+                GetComponent<AudioSource>().Play();
             }
         }
         if (other.tag == "Coin") //if coin spawned in block the coin will be destroyed.

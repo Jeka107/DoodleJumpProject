@@ -8,6 +8,14 @@ public class Coin : MonoBehaviour
     public bool coinOnBlock = false;
     private void OnTriggerEnter(Collider other) //when collide destroy.
     {
-        Destroy(gameObject);
+        if(other.tag=="Player")
+        {
+            GetComponent<AudioSource>().Play();
+            GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(gameObject, 5f);
+        }
+        else
+            Destroy(gameObject);
+
     }
 }
